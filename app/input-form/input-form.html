@@ -1,0 +1,11 @@
+<div id="form-container">
+    <div class="lblText">First Name</div>
+    <input type="text" value.bind="firstName" placeholder="Enter your first name"/>
+
+    <div class="lblText">Last Name</div>
+    <input type="text" value.bind="lastName" placeholder="Enter your last name"/>
+
+    <button click.call="greeting" classList.if="lastName === 'Lemmert' ? 'button-red' : 'button-blue'">Submit</button>
+
+    <label style.color.if="firstName === 'Charles' ? 'red' : 'blue'">${greet} ${firstName} ${lastName}</label>
+</div>

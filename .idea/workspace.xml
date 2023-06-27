@@ -5,20 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8248a919-6409-489f-b9fa-4ceecefc4d6c" name="Changes" comment="initial">
-      <change afterPath="$PROJECT_DIR$/app/maze-escape/manager/scene.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/maze-escape/maze-escape.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/maze-escape/maze-escape.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/maze-escape/maze-escape.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/babylonjs/babylon.gui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/babylonjs/babylon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/babylonjs/babylonjs.materials.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/playground-projects/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/untitled/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/input-form/input-form.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/input-form/input-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/input-form/input-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/input-form/input-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/input-form/input-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/maze-escape/manager/scene.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/maze-escape/manager/scene.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/binding-engine3/crs-binding.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/binding-engine3/crs-binding.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/binding-engine3/events/dom-events.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/binding-engine3/events/dom-events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/binding-engine3/providers/attributes/classlist-toggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/binding-engine3/providers/attributes/classlist-toggle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/binding-engine3/providers/events/keyboard-event.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/binding-engine3/providers/events/keyboard-event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/binding-engine3/store/event-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/binding-engine3/store/event-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/binding-engine3/utils/dispose-properties.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/binding-engine3/utils/dispose-properties.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-worker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +53,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/PragmaDev/playground-projects",
+    "last_opened_file_path": "C:/PragmaDev/playground-projects/packages/binding-engine3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,11 +68,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\PragmaDev\playground-projects\packages\binding-engine3" />
       <recent name="C:\PragmaDev\playground-projects\app\maze-escape" />
       <recent name="C:\PragmaDev\playground-projects\packages" />
       <recent name="F:\caperaven projects\crs-applicaion-template-3\packages" />
       <recent name="F:\caperaven projects\crs-applicaion-template-3" />
-      <recent name="F:\caperaven projects\crs-applicaion-template-3\styles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\caperaven projects\crs-applicaion-template-3\src" />
@@ -117,8 +116,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.caddy-run" />
         <item itemvalue="npm.create-worker-files" />
+        <item itemvalue="npm.caddy-run" />
       </list>
     </recent_temporary>
   </component>
@@ -143,7 +142,7 @@
       <workItem from="1687346451789" duration="605000" />
       <workItem from="1687511730675" duration="2542000" />
       <workItem from="1687769872925" duration="762000" />
-      <workItem from="1687890689196" duration="1115000" />
+      <workItem from="1687890689196" duration="5004000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1687179819676</created>

@@ -38,7 +38,7 @@ export default class Scene {
         camera.setTarget(BABYLON.Vector3.Zero());
         camera.attachControl(canvas, true);
 
-
+        
         return scene;
     }
 

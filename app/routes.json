@@ -18,6 +18,10 @@
       "view": "maze-escape"
     },
     {
+      "title": "Input Form",
+      "view": "input-form"
+    },
+    {
       "title": "About",
       "view": "about"
     }
