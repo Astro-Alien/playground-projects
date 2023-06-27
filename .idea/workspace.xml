@@ -4,11 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8248a919-6409-489f-b9fa-4ceecefc4d6c" name="Changes" comment="" />
+    <list default="true" id="8248a919-6409-489f-b9fa-4ceecefc4d6c" name="Changes" comment="initial">
+      <change afterPath="$PROJECT_DIR$/app/maze-escape/manager/scene.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/maze-escape/maze-escape.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/maze-escape/maze-escape.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/maze-escape/maze-escape.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/babylonjs/babylon.gui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/babylonjs/babylon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/babylonjs/babylonjs.materials.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/playground-projects/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-worker.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,26 +54,26 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "F:/caperaven projects/crs-applicaion-template-3/packages",
+    "last_opened_file_path": "C:/PragmaDev/playground-projects",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.25439784",
     "settings.editor.selected.configurable": "settings.space",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\PragmaDev\playground-projects\app\maze-escape" />
+      <recent name="C:\PragmaDev\playground-projects\packages" />
       <recent name="F:\caperaven projects\crs-applicaion-template-3\packages" />
       <recent name="F:\caperaven projects\crs-applicaion-template-3" />
       <recent name="F:\caperaven projects\crs-applicaion-template-3\styles" />
-      <recent name="F:\caperaven projects\crs-applicaion-template-3\packages\crs-process-api" />
-      <recent name="F:\caperaven projects\crs-applicaion-template-3\packages\crs-process-api\components\view-loader" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\caperaven projects\crs-applicaion-template-3\src" />
@@ -58,7 +81,30 @@
       <recent name="F:\caperaven projects\crs-applicaion-template-3\styles" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.create-worker-files">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="untitled" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="untitled" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="caddy-run" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="caddy-run" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="create-worker-files" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -71,6 +117,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.caddy-run" />
         <item itemvalue="npm.create-worker-files" />
       </list>
     </recent_temporary>
@@ -96,6 +143,7 @@
       <workItem from="1687346451789" duration="605000" />
       <workItem from="1687511730675" duration="2542000" />
       <workItem from="1687769872925" duration="762000" />
+      <workItem from="1687890689196" duration="1115000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1687179819676</created>

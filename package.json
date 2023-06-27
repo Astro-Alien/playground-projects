@@ -1,5 +1,6 @@
 {
 	"scripts": {
-		"create-worker-files": "deno run --allow-all ./build/gen-service-worker-files.js"
+		"create-worker-files": "deno run --allow-all ./build/gen-service-worker-files.js",
+		"caddy-run": "caddy run"
 	}
 }
