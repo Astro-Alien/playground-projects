@@ -24,7 +24,6 @@ export default class SpeechRecognition extends crs.classes.BindableElement {
 
       }
 
-
       async  #startingSpeechListener() {
          const speech = true;
          const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
