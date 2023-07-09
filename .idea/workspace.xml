@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8248a919-6409-489f-b9fa-4ceecefc4d6c" name="Changes" comment="initial">
-      <change afterPath="$PROJECT_DIR$/app/input-form/input-form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/speech-recognition/speech-recognition.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/speech-recognition/speech-recognition.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/speech-recognition/speech-recognition.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/input-form/input-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/input-form/input-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/input-form/input-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/input-form/input-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/maze-escape/manager/scene.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/maze-escape/manager/scene.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/binding-engine3/crs-binding.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/binding-engine3/crs-binding.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/binding-engine3/events/dom-events.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/binding-engine3/events/dom-events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/binding-engine3/providers/attributes/classlist-toggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/binding-engine3/providers/attributes/classlist-toggle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/binding-engine3/providers/events/keyboard-event.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/binding-engine3/providers/events/keyboard-event.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/binding-engine3/store/event-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/binding-engine3/store/event-store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/binding-engine3/utils/dispose-properties.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/binding-engine3/utils/dispose-properties.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-worker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/PragmaDev/playground-projects/packages/binding-engine3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -62,7 +56,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.25439784",
-    "settings.editor.selected.configurable": "settings.space",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -80,7 +74,7 @@
       <recent name="F:\caperaven projects\crs-applicaion-template-3\styles" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.create-worker-files">
+  <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="untitled" />
       <method v="2">
@@ -114,12 +108,6 @@
       <envs />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.create-worker-files" />
-        <item itemvalue="npm.caddy-run" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

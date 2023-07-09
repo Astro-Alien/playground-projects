@@ -22,6 +22,10 @@
       "view": "input-form"
     },
     {
+      "title": "Speech Regconition",
+      "view": "speech-recognition"
+    },
+    {
       "title": "About",
       "view": "about"
     }
