@@ -31,7 +31,7 @@ export default class SpeechRecognition extends crs.classes.BindableElement {
          const recognition = new SpeechRecognition();
 
          SpeechRecognition.interimResults = true;
-
+         //Todo: Refactor class do it better
          recognition.addEventListener("result", (event) => {
                 const transcript = Array.from(event.results).map(result => result[0])
                 .map(result => result.transcript);
