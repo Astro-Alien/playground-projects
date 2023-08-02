@@ -1,5 +1,8 @@
 export default class SpeechRecognition extends crs.classes.BindableElement {
       #speechHandler;
+      #functions = {
+        "print"
+      };
 
       get html() {
         return import.meta.url.replace(".js", ".html");
@@ -30,15 +33,20 @@ export default class SpeechRecognition extends crs.classes.BindableElement {
          const recognition = new SpeechRecognition();
 
          SpeechRecognition.interimResults = true;
-         //Todo: Refactor class do it better
+         //Todo: Refactor class do it better [memory leak]
          recognition.addEventListener("result", (event) => {
                 const transcript = Array.from(event.results).map(result => result[0])
                 .map(result => result.transcript);
 
-                const fn = transcript[0];
+                const script = transcript[0];
+
+                const data = script.split(" ");
+
+                const fn = data[0];
+                console.log(data);
 
                 if (this[fn] != null) {
-                    this[fn]();
+                    this[fn](data[1]);
                 }
          });
 
@@ -47,8 +55,8 @@ export default class SpeechRecognition extends crs.classes.BindableElement {
          }
       }
 
-      async print() {
-          console.log("hello world");
+      async print(message) {
+          console.log(message);
       }
 
 }
