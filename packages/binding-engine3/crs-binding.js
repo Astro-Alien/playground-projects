@@ -217,6 +217,10 @@ var Providers = class {
   }
   async update(uuid, ...properties) {
     const element = crs.binding.elements[uuid];
+    if (element.__repeat_container === true) {
+      const provider = crs.binding.providers.elementProviders["template[for]"];
+      provider.update(uuid);
+    }
     if (element.__events != null && element.__events.indexOf("change") != -1) {
       const bindProvider = this.#attrProviders[".bind"];
       const onewayProvider = this.#attrProviders[".one-way"];
@@ -377,6 +381,20 @@ var BindingData = class {
       }
     }
   }
+  #removeElementFromContext(bid, uuid) {
+    const context = this.#context[bid];
+    if (context == null)
+      return;
+    if (context.boundElements != null) {
+      context.boundElements.delete(uuid);
+    }
+  }
+  #removeElementFromCallbacks(bid, uuid) {
+    const callbacks = this.#callbacks[bid];
+    for (const key of Object.keys(callbacks)) {
+      callbacks[key].delete(uuid);
+    }
+  }
   setCallback(uuid, bid, properties, provider) {
     const obj = this.#callbacks[bid] ||= {};
     for (const property of properties) {
@@ -438,6 +456,16 @@ var BindingData = class {
     const data = crs.binding.data.getData(bid);
     return data.data;
   }
+  removeElement(uuid) {
+    const element = crs.binding.elements[uuid];
+    if (element == null)
+      return;
+    const bid = element?.["__bid"];
+    if (bid == null)
+      return;
+    this.#removeElementFromContext(bid, uuid);
+    this.#removeElementFromCallbacks(bid, uuid);
+  }
   remove(id) {
     id = this.#getContextId(id);
     const context = this.#context[id];
@@ -458,6 +486,10 @@ var BindingData = class {
     delete this.#contextCallbacks[id];
     if (crs.binding.dataDef != null) {
       crs.binding.dataDef.remove(id);
+    }
+    const triggersProvider = crs.binding.providers.attrProviders[".changed."];
+    if (typeof triggersProvider !== "string") {
+      triggersProvider.clear(id);
     }
   }
   getProperty(id, property) {
@@ -502,6 +534,10 @@ var BindingData = class {
       await crs.binding.dataDef.automateValues(id, property);
       await crs.binding.dataDef.automateValidations(id, property);
     }
+    const triggersProvider = crs.binding.providers.attrProviders[".changed."];
+    if (typeof triggersProvider !== "string") {
+      await triggersProvider.update(id, property);
+    }
   }
   async updateProperty(id, property, callback) {
     let value = this.getProperty(id, property);
@@ -538,7 +574,14 @@ var BindingData = class {
     const context = this.getContext(bid);
     if (context == null || context.boundElements == null)
       return;
-    await this.#performUpdate(bid, property);
+    if (property != null) {
+      await this.#performUpdate(bid, property);
+    } else {
+      const properties = Object.keys(this.#callbacks[bid]);
+      for (const property2 of properties) {
+        await this.#performUpdate(bid, property2);
+      }
+    }
   }
   async addCallback(bid, property, callback) {
     const obj = this.#callbacks[bid];
@@ -1046,24 +1089,27 @@ function markElement(element, context) {
   context.boundElements.add(element["__uuid"]);
   return element["__uuid"];
 }
-function unmarkElement(element) {
+function unmarkElement(element, removeElementFromContext = false) {
   if (element.nodeName === "STYLE")
     return;
   if (element.children.length > 0) {
-    unmarkElements(element.children);
+    unmarkElements(element.children, removeElementFromContext);
   }
   const uuid = element["__uuid"];
   if (uuid == null)
     return;
   crs.binding.providers.clear(uuid).catch((error) => console.error(error));
   if (crs.binding.elements[uuid]) {
+    if (removeElementFromContext === true) {
+      crs.binding.data.removeElement(uuid);
+    }
     delete crs.binding.elements[uuid];
   }
   crs.binding.utils.disposeProperties(element);
 }
-function unmarkElements(elements) {
+function unmarkElements(elements, removeElementFromContext) {
   for (const element of elements) {
-    unmarkElement(element);
+    unmarkElement(element, removeElementFromContext);
   }
 }
 
@@ -1263,7 +1309,6 @@ var EventStore = class {
     return this.#store;
   }
   async #onEvent(event2) {
-    event2.stopPropagation();
     const targets = getTargets(event2);
     if (targets.length === 0)
       return;
@@ -1471,7 +1516,9 @@ globalThis.crs.binding = {
       ".two-way": "$root/providers/properties/bind.js",
       ".one-way": "$root/providers/properties/one-way.js",
       ".once": "$root/providers/properties/once.js",
+      ".changed.": "$root/providers/properties/changed.js",
       ".setvalue": "$root/providers/attributes/set-value.js",
+      ".attr.toggle": "$root/providers/attributes/attr-toggle.js",
       ".attr": "$root/providers/attributes/attr.js",
       ".if": "$root/providers/attributes/attr-if.js",
       ".case": "$root/providers/attributes/attr-case.js",

@@ -1,6 +1,13 @@
 class Observable {
   #events = [];
   #eventEmitter = new EventTarget();
+  #allowNotifications = true;
+  get allowNotifications() {
+    return this.#allowNotifications;
+  }
+  set allowNotifications(newValue) {
+    this.#allowNotifications = newValue;
+  }
   get events() {
     return Object.freeze(this.#events);
   }
@@ -19,7 +26,9 @@ class Observable {
     this.#events.splice(this.#events.indexOf({ event, listener }), 1);
   }
   notify(event, detail) {
-    this.#eventEmitter.dispatchEvent(new CustomEvent(event, { detail }));
+    if (this.allowNotifications === true) {
+      this.#eventEmitter.dispatchEvent(new CustomEvent(event, { detail }));
+    }
   }
 }
 crs.classes.Observable = Observable;
