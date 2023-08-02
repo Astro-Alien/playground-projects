@@ -45,6 +45,20 @@ class BindingData {
       }
     }
   }
+  #removeElementFromContext(bid, uuid) {
+    const context = this.#context[bid];
+    if (context == null)
+      return;
+    if (context.boundElements != null) {
+      context.boundElements.delete(uuid);
+    }
+  }
+  #removeElementFromCallbacks(bid, uuid) {
+    const callbacks = this.#callbacks[bid];
+    for (const key of Object.keys(callbacks)) {
+      callbacks[key].delete(uuid);
+    }
+  }
   setCallback(uuid, bid, properties, provider) {
     const obj = this.#callbacks[bid] ||= {};
     for (const property of properties) {
@@ -106,6 +120,16 @@ class BindingData {
     const data = crs.binding.data.getData(bid);
     return data.data;
   }
+  removeElement(uuid) {
+    const element = crs.binding.elements[uuid];
+    if (element == null)
+      return;
+    const bid = element?.["__bid"];
+    if (bid == null)
+      return;
+    this.#removeElementFromContext(bid, uuid);
+    this.#removeElementFromCallbacks(bid, uuid);
+  }
   remove(id) {
     id = this.#getContextId(id);
     const context = this.#context[id];
@@ -126,6 +150,10 @@ class BindingData {
     delete this.#contextCallbacks[id];
     if (crs.binding.dataDef != null) {
       crs.binding.dataDef.remove(id);
+    }
+    const triggersProvider = crs.binding.providers.attrProviders[".changed."];
+    if (typeof triggersProvider !== "string") {
+      triggersProvider.clear(id);
     }
   }
   getProperty(id, property) {
@@ -170,6 +198,10 @@ class BindingData {
       await crs.binding.dataDef.automateValues(id, property);
       await crs.binding.dataDef.automateValidations(id, property);
     }
+    const triggersProvider = crs.binding.providers.attrProviders[".changed."];
+    if (typeof triggersProvider !== "string") {
+      await triggersProvider.update(id, property);
+    }
   }
   async updateProperty(id, property, callback) {
     let value = this.getProperty(id, property);
@@ -206,7 +238,14 @@ class BindingData {
     const context = this.getContext(bid);
     if (context == null || context.boundElements == null)
       return;
-    await this.#performUpdate(bid, property);
+    if (property != null) {
+      await this.#performUpdate(bid, property);
+    } else {
+      const properties = Object.keys(this.#callbacks[bid]);
+      for (const property2 of properties) {
+        await this.#performUpdate(bid, property2);
+      }
+    }
   }
   async addCallback(bid, property, callback) {
     const obj = this.#callbacks[bid];
